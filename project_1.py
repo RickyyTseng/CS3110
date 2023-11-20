@@ -1,5 +1,3 @@
-import sys
-
 def parse_number(token: str) -> bool:
     state = 0  # See JFLAP NFA diagram for state numbers
 
@@ -191,31 +189,40 @@ TEST_DATA = [
     ("3_14.15", True)
 ]
 
+
 def main():
-    if sys.argv[-1] != "test":  # Test mode
-        # Verify test data
-        for string, expected in TEST_DATA:
-            try:
-                eval(string)
-            except:
-                if expected and string != "":
-                    print(f"Invalid number in test data: {string}")
-                    exit(1)
-        
-        # Run tests
-        for string, expected in TEST_DATA:
-            result = parse_number(string)
-            print(f"{'PASS' if result == expected else '***FAIL***'}: {string} (Result: {result}, Expected: {expected})")
-    else:  # Manual input mode
-        while True:
+    # Print options and get input from user
+    print("1) Run tests")
+    print("2) Enter numbers manually")
+    option = input("Enter an option: ")
+    match option:
+        case "1":
+            # Verify test data
+            for string, expected in TEST_DATA:
+                try:
+                    eval(string)
+                except:
+                    if expected and string != "":
+                        print(f"Invalid number in test data: {string}")
+                        exit(1)
+            
+            # Run tests
+            for string, expected in TEST_DATA:
+                result = parse_number(string)
+                print(f"{'PASS' if result == expected else '***FAIL***'}: {string} (Result: {result}, Expected: {expected})")
+        case "2":
             print("Press Ctrl + C to exit.")
-            try:
-                input_num = input("Enter a number: ")
-                result = parse_number(input_num)
-                print(f"{input_num} is {'a' if result else 'not a'} valid number.")
-                print()
-            except KeyboardInterrupt:
-                break
+            while True:
+                try:
+                    input_num = input("Enter a number: ")
+                    result = parse_number(input_num)
+                    print(f"{input_num} is {'a' if result else 'not a'} valid number.")
+                    print()
+                except KeyboardInterrupt:
+                    break
+        case _:
+            print("Invalid option; exiting...")
+            exit(1)
 
 
 if __name__ == "__main__":
