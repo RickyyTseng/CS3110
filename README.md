@@ -9,11 +9,11 @@ Cj Hosea
 
 Contributions:
 --------------
-Ricky - Main NFA code and Readme
+Ricky - Main NFA code, Readme and helped with Extra Credit
 
-Mathew - NFA using JFLAP and helped with code
+Mathew - NFA using JFLAP, Helped with code, and Extra Credit code
 
-Cj - Helped with NFA design
+Cj - Helped with NFA design and other stuff
 
 Githubs:
 --------
