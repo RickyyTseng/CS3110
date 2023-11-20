@@ -9,9 +9,9 @@ Cj Hosea
 
 Contributions:
 --------------
-Ricky - Main calculator code
+Ricky - Main NFA code
 
-Mathew - NFA using JFLAP
+Mathew - NFA using JFLAP and helped with code
 
 Cj - Readme and helped with NFA design
 
@@ -25,4 +25,4 @@ aerovvs
 
 Features:
 ---------
-Simple calcultor that adds, subtracts, multiplies, and divides in Python. It is able to use these functions on decimals, hexadecimals, and octals. Does this by parsing input string and returning a tuple which consists of two operands and an operator. Parses type based off of input and performs operation then prints. 
+NFA code that reads and recognizes Python numerical literals. It takes in decintegers, hexintegers, octintegers, and floating point literals. 
