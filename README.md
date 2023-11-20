@@ -25,4 +25,4 @@ aerovvs
 
 Features:
 ---------
-NFA code that reads and recognizes Python numerical literals. It takes in decintegers, hexintegers, octintegers, and floating point literals. 
+NFA code that reads and recognizes Python numerical literals. It takes in decintegers, hexintegers, octintegers, and floating point literals (Extra Credit). 
