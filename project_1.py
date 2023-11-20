@@ -12,7 +12,7 @@ def parse_number(token: str) -> bool:
                     state = 3
                 else:
                     return False
-            case 1:  # Integer state
+            case 1:  # Decimal state
                 if '0' <= c <= '9':
                     state = 1
                 elif c == "_":
@@ -42,7 +42,7 @@ def parse_number(token: str) -> bool:
                     state = 10
                 else:
                     return False
-            case 8:  # Integer underscore state
+            case 8:  # Decimal underscore state
                 if '0' <= c <= '9':
                     state = 1
                 else:
@@ -99,7 +99,7 @@ TEST_DATA = [
 ]
 
 def main():
-    if sys.argv[-1] != "test":
+    if sys.argv[-1] == "test":  # Test mode
         # Verify test data
         for string, expected in TEST_DATA:
             try:
@@ -112,7 +112,7 @@ def main():
         # Run tests
         for string, expected in TEST_DATA:
             print(f"{string}: {'PASS' if parse_number(string) == expected else 'FAIL'}")
-    else:
+    else:  # Manual input mode
         while True:
             print("Press Ctrl + C to exit.")
             try:
